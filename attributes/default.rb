@@ -1,5 +1,3 @@
-# vim: tabstop=4 expandtab shiftwidth=2 softtabstop=2
-
 # Common
 default['nagios']['prefix'] = '/opt/nagios'
 default['nagios']['download_dir'] = '/tmp'

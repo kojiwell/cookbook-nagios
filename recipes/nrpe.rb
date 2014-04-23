@@ -4,7 +4,7 @@
 # Recipe:: nrpe
 # Author:: Koji Tanaka (<kj.tanaka@gmail.com>)
 #
-# Copyright 2013-2014, FutureGrid
+# Copyright 2013-2014, Koji Tanaka
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
