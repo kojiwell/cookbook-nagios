@@ -1,10 +1,9 @@
-# vim: tabstop=4 expandtab shiftwidth=2 softtabstop=2
 #
 # Cookbook Name:: nagios
 # Recipe:: nrpe
 # Author:: Koji Tanaka (<kj.tanaka@gmail.com>)
 #
-# Copyright 2013-2014, Koji Tanaka
+# Copyright 2013-2014, FutureGrid, Indiana University
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
