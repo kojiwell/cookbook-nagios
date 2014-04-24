@@ -123,7 +123,7 @@ template "#{nagios_prefix}/etc/nrpe.cfg" do
   mode "0644"
   owner "nagios"
   group "nagios"
-  action :create
+  action :create_if_missing
   variables(
     :allowed_hosts => nrpe_allowed_hosts
   )
