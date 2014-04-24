@@ -25,6 +25,10 @@ nrpe_version = node['nagios']['nrpe']['version']
 nrpe_download_url = node['nagios']['nrpe']['download_url']
 nrpe_allowed_hosts = node['nagios']['nrpe']['allowed_hosts']
 
+directory nagios_download_dir do
+	action :create
+end
+
 case node[:platform]
 when "redhat", "centos"
   packages = %w[gcc openssl-devel]
