@@ -1,28 +1,29 @@
 ---
-driver:
-  name: vagrant
+driver_plugin: digitalocean
+driver_config:
+  digitalocean_client_id: <%= ENV['DIGITALOCEAN_CLIENT_ID'] %>
+  digitalocean_api_key: <%= ENV['DIGITALOCEAN_API_KEY'] %>
+  ssh_key: <%= ENV['DIGITALOCEAN_SSH_KEY_PATH'] %>
+  ssh_key_ids: <%= ENV['DIGITALOCEAN_SSH_KEY_IDS'] %>
 
 provisioner:
   name: chef_solo
 
 platforms:
   - name: centos-6.5
+    driver_plugin: digitalocean
     driver_config:
-      box: opscode-centos-6.5
-      box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box
-      customize:
-        memory: 256
-        cpuexecutioncap: 50
+      image_id: 6372108
   - name: ubuntu-12.04
+    driver_plugin: digitalocean
     driver_config:
-      box: opscode-centos-12.04
-      box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_ubuntu-12.04_chef-provisionerless.box
-      customize:
-        memory: 256
-        cpuexecutioncap: 50
+      image_id: 6374128
 
 suites:
   - name: nrpe
     run_list:
       - recipe[nagios::nrpe]
     attributes:
+  - name: core
+    run_list:
+      - recipe[nagios::core]
